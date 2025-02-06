@@ -1,6 +1,6 @@
 package com.ddanilov.algo_learning.arrays
 
-//fun com.ddanilov.revision.main() {
+//fun com.ddanilov.revision.com.ddanilov.new2025.main() {
 //    val array = intArrayOf(1, 6, 4, 2, 18, 32)
 //    val target = 19
 //    val result = twoSum1(array, target)
