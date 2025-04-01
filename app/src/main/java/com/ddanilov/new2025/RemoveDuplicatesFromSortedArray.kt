@@ -7,9 +7,9 @@ fun main() {
     println("XXXX result $result")
 }
 
-// 1, 2, 4, 6, 8, 9, 8, 8, 9
-//                   l
-//                          r
+// 1, 1, 2, 6, 8, 9, 9, 10, 11, 12
+//     l
+//     r
 fun removeDuplicatesBrutForce(nums: IntArray): Int {
     var l = 1
     for (r in 1 until nums.size) {
