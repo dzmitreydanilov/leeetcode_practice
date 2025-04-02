@@ -1,20 +1,24 @@
 package com.ddanilov.new2025
 
 fun main() {
+
     val nums = intArrayOf(1, 3, 5, 6)
-    val target = 5
+    val target = 6
+
     val result = searchInsert(nums, target)
 
-    println("XXX result: $result")
+    println("XXXX $result")
+
 }
 
 /**
+ * 1, 3, 5, 7
  *
- * target = 5
- * [1, 3, 5, 6]
- *  l  m     r
+ *          l
+ *       r
  *
- *  m = (0 + 3) / 2 (1)
+ * m = 2
+ *
  */
 
 private fun searchInsert(nums: IntArray, target: Int): Int {
@@ -22,16 +26,16 @@ private fun searchInsert(nums: IntArray, target: Int): Int {
     var r = nums.size - 1
 
     while (l <= r) {
-        val midI = (l + r) / 2
+        val mid = (l + r) / 2
 
-        if (nums[midI] == target) {
-            return midI
+        if (nums[mid] == target) {
+            return mid
         }
 
-        if (target > nums[midI]) {
-            l = midI + 1
+        if (target > nums[mid]) {
+            l = mid + 1
         } else {
-            r = midI - 1
+            r = mid - 1
         }
     }
 
