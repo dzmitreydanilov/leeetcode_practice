@@ -12,10 +12,10 @@ fun main() {
 
 /**
  * 0,1,2,4,5,7
- * l
- *   r
+ *           l
+ *           r
  *
- *
+ *  r = 4
  */
 
 private fun summaryRanges(nums: IntArray): List<String> {
@@ -25,11 +25,11 @@ private fun summaryRanges(nums: IntArray): List<String> {
     val result = mutableListOf<String>()
 
     while (r <= nums.size) {
-        val rangeStart = nums[l]
+        val startValue = nums[l]
         if (r < nums.size && nums[r] == nums[r - 1] + 1) {
             r++
         } else {
-            result.add(convertToRange(rangeStart, nums[r - 1]))
+            result.add(toRange(startValue, nums[r - 1]))
             l = r
             r++
         }
@@ -38,10 +38,10 @@ private fun summaryRanges(nums: IntArray): List<String> {
     return result
 }
 
-private fun convertToRange(num1: Int, num2: Int): String {
-    return if (num1 == num2) {
-        "$num1"
+private fun toRange(nums1: Int, nums2: Int): String {
+    return if (nums1 == nums2) {
+        "$nums1"
     } else {
-        "$num1->$num2"
+        "$nums1->$nums2"
     }
 }
