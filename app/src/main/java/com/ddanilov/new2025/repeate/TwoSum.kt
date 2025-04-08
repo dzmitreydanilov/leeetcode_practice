@@ -6,9 +6,14 @@ fun main() {
 
     val result = twoSum(nums, target)
 
-    println("XX ${result.toTypedArray().toString()}")
-
+    result.forEach {
+        print("$it, ")
+    }
 }
+
+/**
+ * 2, 7, 11, 15
+ */
 
 private fun twoSum(nums: IntArray, target: Int): IntArray {
     val map = mutableMapOf<Int, Int>()
@@ -23,5 +28,4 @@ private fun twoSum(nums: IntArray, target: Int): IntArray {
     }
 
     return intArrayOf()
-
 }
