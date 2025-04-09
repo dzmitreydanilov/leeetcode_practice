@@ -1,31 +1,29 @@
-package com.ddanilov.new2025.repeate
+package com.ddanilov.new2025
 
 fun main() {
-    val nums = intArrayOf(1,2)
-    val target = 3
+
+    val nums = intArrayOf(1, 3, 5, 6)
+    val target = 6
 
     val result = searchInsert(nums, target)
 
-    println("XXX $result")
+    println("XXXX $result")
+
 }
 
 /**
- * 1, 2
- *    l
- *    m
- *    r
+ * 1, 3, 5, 7
  *
+ *          l
+ *       r
  *
- * m = (0 + 1) / 2 = 0
- * 3 > 1
+ * m = 2
  *
- * m = (1 + 1) /2 = 1
- * 3 > 2
  */
 
 private fun searchInsert(nums: IntArray, target: Int): Int {
     var l = 0
-    var r = nums.lastIndex
+    var r = nums.size - 1
 
     while (l <= r) {
         val mid = (l + r) / 2
@@ -43,4 +41,3 @@ private fun searchInsert(nums: IntArray, target: Int): Int {
 
     return l
 }
-
