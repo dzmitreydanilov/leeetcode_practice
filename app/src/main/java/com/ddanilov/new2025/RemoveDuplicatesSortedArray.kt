@@ -1,17 +1,18 @@
-package com.ddanilov.new2025.repeate
+package com.ddanilov.new2025
 
 fun main() {
-    val nums = intArrayOf(1,2)
+
+    val nums = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
 
     val result = removeDuplicates(nums)
 
-    println("XXX $result")
+    println("XXXX $result")
 }
 
 /**
- * 1,2
- *   l
- *   r
+ * 0, 1, 3, 5, 6, 8, 10, 8, 10, 10
+ *                       l
+ *                              r
  */
 private fun removeDuplicates(nums: IntArray): Int {
     var l = 1
@@ -21,5 +22,6 @@ private fun removeDuplicates(nums: IntArray): Int {
             l++
         }
     }
+
     return l
 }
