@@ -1,48 +1,25 @@
-package com.ddanilov.new2025
+package com.ddanilov.new2025.repeate
 
 fun main() {
-
     val nums1 = intArrayOf(1, 2, 2, 1)
     val nums2 = intArrayOf(2, 2)
 
     val result = intersection(nums1, nums2)
 
     result.forEach {
-        print("$it, ")
+        println("$it, ")
     }
-
 }
 
 /**
- * 1, 2, 2, 1
+ * 4,9,5
  *
- * 2, 2
+ * 9,4,9,8,4
  *
- */
-
-private fun intersectionBrut(nums1: IntArray, nums2: IntArray): IntArray {
-    val finalSet = mutableSetOf<Int>()
-
-    for (i in nums1) {
-        for (j in nums2) {
-            if (i == j) {
-                finalSet.add(j)
-            }
-        }
-    }
-
-    return finalSet.toIntArray()
-}
-
-/**
- * 1, 2, 2, 1
- *
- * 1
+ *  5
  *
  *
- * 2, 2
- *
- * [2, ]
+ * res = [9, 4, ]
  *
  */
 private fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
@@ -52,6 +29,7 @@ private fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
     nums1.forEach {
         set.add(it)
     }
+
 
     nums2.forEach {
         if (set.contains(it)) {

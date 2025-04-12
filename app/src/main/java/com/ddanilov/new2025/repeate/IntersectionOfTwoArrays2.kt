@@ -1,4 +1,4 @@
-package com.ddanilov.new2025
+package com.ddanilov.new2025.repeate
 
 fun main() {
     val nums1 = intArrayOf(1, 2, 2, 1)
@@ -7,18 +7,21 @@ fun main() {
     val result = intersect(nums1, nums2)
 
     result.forEach {
-        print("$it, ")
+        println("$it, ")
     }
 }
 
 /**
  * 4,5,9
- *     i
+ * l
+ *
  * 4,4,8,9,9
- *       j
+ * r
+ *
+ *
+ * res = [4, 9]
  *
  */
-
 private fun intersect(nums1: IntArray, nums2: IntArray): IntArray {
     var i = 0
     var j = 0
@@ -28,17 +31,17 @@ private fun intersect(nums1: IntArray, nums2: IntArray): IntArray {
     nums2.sort()
 
     while (i < nums1.size && j < nums2.size) {
-        if (nums1[i] < nums2[j]) {
+        if (nums1[i] == nums2[j]) {
+            nums1[k] = nums1[i]
             i++
+            j++
+            k++
         } else if (nums1[i] > nums2[j]) {
             j++
         } else {
-            nums1[k++] = nums1[i]
             i++
-            j++
         }
     }
 
-
-    return nums1.copyOfRange(0,k)
+    return nums1.copyOfRange(0, k)
 }
