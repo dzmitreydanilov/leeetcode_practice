@@ -1,31 +1,31 @@
 package com.ddanilov.new2025.repeate
 
-fun main() {
 
+fun main() {
     val nums = intArrayOf(3, 2, 3)
 
     val result = majorityElement(nums)
 
-    println("XXX $result")
+    println("XX $result")
 }
 
 /**
- * 3, 2, 3, 4
- *          l
+ * 3, 2, 3
+ *
  * mE = 3
- * count = 0
+ * c = 0
  */
 private fun majorityElement(nums: IntArray): Int {
+    var counter = 0
     var majorElement = 0
-    var count = 0
 
     nums.forEach {
-        if (count == 0) {
+        if (counter == 0) {
             majorElement = it
         }
 
-        count += if (majorElement == it) 1 else -1
+        counter += if (majorElement == it) 1 else -1
     }
-    return majorElement
 
+    return majorElement
 }

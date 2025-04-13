@@ -1,38 +1,35 @@
 package com.ddanilov.new2025
 
-import kotlin.math.max
-
 fun main() {
-    val nums = intArrayOf(5, 2, 2)
+
+    val nums = intArrayOf(3, 2, 1)
 
     val result = thirdMax(nums)
 
-    println("XXXXX $result")
+    println("XX $result")
 
 }
 
 /**
- * 2,2,3,1
- *
- * m1 = 3
- *
- * m2 = 2
- *
- * m3 = 1
+ * 3,2,1
+ * 3
+ * m = 3
+ * m2 = 0
+ * m3 = 0
  */
-
 private fun thirdMax(nums: IntArray): Int {
-    var m1: Int? = null
+    var m: Int? = null
     var m2: Int? = null
     var m3: Int? = null
 
     for (num in nums) {
-        if (num == m1 || num == m2 || num == m3) continue
 
-        if (m1 == null || num > m1) {
+        if (m == num || m2 == num || m3 == num) continue
+
+        if (m == null || num > m) {
             m3 = m2
-            m2 = m1
-            m1 = num
+            m2 = m
+            m = num
         } else if (m2 == null || num > m2) {
             m3 = m2
             m2 = num
@@ -41,5 +38,5 @@ private fun thirdMax(nums: IntArray): Int {
         }
     }
 
-    return m3 ?: m1!!
+    return m3 ?: m!!
 }

@@ -1,4 +1,4 @@
-package com.ddanilov.new2025.repeate
+package com.ddanilov.new2025
 
 fun main() {
     val nums = intArrayOf(0, 1, 0, 3, 12)

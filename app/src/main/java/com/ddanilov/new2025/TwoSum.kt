@@ -1,22 +1,27 @@
-package com.ddanilov.new2025.repeate
+package com.ddanilov.new2025
 
 fun main() {
     val nums = intArrayOf(2, 7, 11, 15)
     val target = 9
+
     val result = twoSum(nums, target)
 
     result.forEach {
-        println(it)
+        print("$it, ")
     }
 }
 
+/**
+ * 2, 7, 11, 15
+ */
+
 private fun twoSum(nums: IntArray, target: Int): IntArray {
     val map = mutableMapOf<Int, Int>()
-    for (i in nums.indices) {
-        val diff = target - nums[i]
 
-        if (map.containsKey(diff)) {
-            return intArrayOf(i, map[diff]!!)
+    for (i in nums.indices) {
+        val result = target - nums[i]
+        if (map.containsKey(result)) {
+            return intArrayOf(i, map[result]!!)
         }
 
         map[nums[i]] = i
