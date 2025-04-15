@@ -3,39 +3,36 @@ package com.ddanilov.new2025
 import java.util.Arrays
 
 fun main() {
-    val gridFactor = intArrayOf(1, 2, 3)
-    val cookies = intArrayOf(1, 1)
+    val g = intArrayOf(1, 2, 3)
+    val s = intArrayOf(1, 1)
 
+    val result = findContentChildren(g, s)
 
-    val result = findContentChildren(gridFactor, cookies)
-
-    println("XX $result")
+    println("XXXX $result")
 }
 
-/**
- * 1,2,3
- *     i
- * 1,1
- *   j
- *
- * r = 0
- */
 
+/**
+ * 7, 8, 9, 10
+ *           i
+ * 5, 6, 7, 8
+ *          j
+ */
 
 private fun findContentChildren(g: IntArray, s: IntArray): Int {
     Arrays.sort(g)
     Arrays.sort(s)
 
-    var p1 = g.size - 1
-    var p2 = s.size - 1
+    var i = g.lastIndex
+    var j = s.lastIndex
     var result = 0
 
-    while (p1 >= 0 && p2 >= 0) {
-        if (s[p1] >= g[p2]) {
+    while (i >= 0 && j >= 0) {
+        if (s[j] >= g[i]) {
             result++
-            --p2
+            j--
         }
-        --p1
+        i--
     }
 
     return result
