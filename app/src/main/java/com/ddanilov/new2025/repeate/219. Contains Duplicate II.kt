@@ -1,40 +1,41 @@
 package com.ddanilov.new2025.repeate
 
 fun main() {
-    val nums = intArrayOf(1, 2, 3, 1)
-    val k = 3
+    val nums = intArrayOf(1,2,3,1,2,3)
+    val k = 2
 
     val result = containsNearbyDuplicate(nums, k)
 
-    println("XXX $result")
+    println(result)
 }
 
 /**
  * 1,2,3,1,2,3
- * l
- *       r
+ *       i
+ *           j
  *
- * l = 0
- * k = 2
+ * [1,2,3]
  *
- * seen = [1,2,]
+ * k=2
  */
+
 private fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean {
-    val seen = mutableSetOf<Int>()
-    var l = 0
 
-    for (r in nums.indices) {
+    var i = 0
+    val set = mutableSetOf<Int>()
 
-        if (r - l > k) {
-            seen.remove(nums[l])
-            l++
+    for (j in nums.indices) {
+        if (j - i > k) {
+            set.remove(nums[i])
+            i++
         }
 
-        if (seen.contains(nums[r])) {
+        if (set.contains(nums[j])) {
             return true
         } else {
-            seen.add(nums[r])
+            set.add(nums[i])
         }
     }
+
     return false
 }
