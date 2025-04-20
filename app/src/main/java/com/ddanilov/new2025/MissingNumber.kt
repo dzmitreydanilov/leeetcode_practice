@@ -1,4 +1,4 @@
-package com.ddanilov.new2025
+package com.ddanilDov.new2025
 
 fun main() {
     val nums = intArrayOf(0,1)

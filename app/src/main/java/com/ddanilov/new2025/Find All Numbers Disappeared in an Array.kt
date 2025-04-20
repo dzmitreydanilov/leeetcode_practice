@@ -13,7 +13,10 @@ fun main() {
 }
 
 /**
- * -4, -3, -2, -7, 8, 2, -3, -1
+ * 4, 3, 2, 7, 8, 2, 3, 1
+ *
+ * i = 3
+ *
  */
 
 private fun findDisappearedNumbers(nums: IntArray): List<Int> {
