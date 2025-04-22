@@ -1,21 +1,17 @@
 package com.ddanilov.new2025
 
 fun main() {
-
     val nums = intArrayOf(1, 1, 0, 1, 1, 1)
 
     val result = findMaxConsecutiveOnes(nums)
 
-    println("XXX $result")
-
+    println(result)
 }
 
 /**
  * 1, 1, 0, 1, 1, 1
- *                r
+ *                c
  *
- * c = 3
- * m = 2
  */
 private fun findMaxConsecutiveOnes(nums: IntArray): Int {
     var counter = 0
@@ -25,10 +21,11 @@ private fun findMaxConsecutiveOnes(nums: IntArray): Int {
         if (num == 1) {
             counter++
         } else {
-            max = maxOf(counter, max)
             counter = 0
         }
+
+        max = maxOf(max, counter)
     }
 
-    return maxOf(counter, max)
+    return max
 }

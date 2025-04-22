@@ -5,49 +5,46 @@ import java.util.Stack
 fun main() {
 
     val nums1 = intArrayOf(4, 1, 2)
-    val nums2 = intArrayOf(2,1,3,4)
+    val nums2 = intArrayOf(1, 3, 4, 2)
 
     val result = nextGreaterElement(nums1, nums2)
+
 
     result.forEach {
         println(it)
     }
-
 }
 
 /**
  * 4, 1, 2
  *
- * 2,1,3,4
+ * 1, 3, 4, 2
  *
- * cur = 3
- *
- * stack = [4]
- *
- * result = [-1, 3, 3]
+ * result = [-1,3,-1]
+ *stack = [1,]
  */
+
 private fun nextGreaterElement(nums1: IntArray, nums2: IntArray): IntArray {
-    val mapIds = mutableMapOf<Int, Int>()
+    val mapId = mutableMapOf<Int, Int>()
 
     nums1.forEachIndexed { index, i ->
-        mapIds[i] = index
+        mapId[i] = index
     }
 
-    val result = IntArray(nums1.size) { -1 }
     val stack = Stack<Int>()
+    val result = IntArray(nums1.size) { -1 }
 
 
     for (num in nums2) {
         val current = num
-
         while (stack.isNotEmpty() && current > stack.lastElement()) {
             val value = stack.pop()
-            val index = mapIds[value]!!
+            val index = mapId[value]!!
             result[index] = current
         }
 
-        if (current in mapIds) {
-            stack.push(current)
+        if (num in mapId) {
+            stack.push(num)
         }
     }
 

@@ -1,4 +1,4 @@
-package com.ddanilov.new2025.repeate
+package com.ddanilov.new2025
 
 fun main() {
     val prices = intArrayOf(7, 1, 5, 3, 6, 4)
