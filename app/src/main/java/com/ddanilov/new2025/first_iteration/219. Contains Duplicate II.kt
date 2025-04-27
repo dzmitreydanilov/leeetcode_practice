@@ -21,21 +21,21 @@ fun main() {
 
 private fun containsNearbyDuplicate(nums: IntArray, k: Int): Boolean {
 
-    var i = 0
-    val set = mutableSetOf<Int>()
+        var i = 0
+        val set = mutableSetOf<Int>()
 
-    for (j in nums.indices) {
-        if (j - i > k) {
-            set.remove(nums[i])
-            i++
+        for (j in nums.indices) {
+            if (j - i > k) {
+                set.remove(nums[i])
+                i++
+            }
+
+            if (set.contains(nums[j])) {
+                return true
+            } else {
+                set.add(nums[i])
+            }
         }
 
-        if (set.contains(nums[j])) {
-            return true
-        } else {
-            set.add(nums[i])
-        }
-    }
-
-    return false
+        return false
 }
