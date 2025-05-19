@@ -1,10 +1,10 @@
 package com.ddanilov.new2025.challange150
 
 class BinaryTree {
-    var root: Node? = null
+    var root: TreeNode? = null
 
     fun insert(value: Int) {
-        val newNode = Node(value)
+        val newNode = TreeNode(value)
         if (root == null) {
             root = newNode
         } else {
@@ -29,7 +29,7 @@ class BinaryTree {
         }
     }
 
-    fun lookUp(value: Int): Node? {
+    fun lookUp(value: Int): TreeNode? {
         if (root == null) {
             return null
         }
@@ -49,7 +49,7 @@ class BinaryTree {
     }
 }
 
-fun printTree(node: Node?, indent: String = "", isRight: Boolean = true) {
+fun printTree(node: TreeNode?, indent: String = "", isRight: Boolean = true) {
     if (node == null) return
 
     printTree(node.right, indent + if (isRight) "        " else " |      ", true)
@@ -57,9 +57,9 @@ fun printTree(node: Node?, indent: String = "", isRight: Boolean = true) {
     printTree(node.left, indent + if (isRight) " |      " else "        ", false)
 }
 
-class Node(val value: Int) {
-    var left: Node? = null
-    var right: Node? = null
+class TreeNode(val value: Int) {
+    var left: TreeNode? = null
+    var right: TreeNode? = null
 }
 
 fun main() {
