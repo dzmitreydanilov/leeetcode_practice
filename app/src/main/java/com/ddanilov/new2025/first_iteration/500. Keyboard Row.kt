@@ -10,7 +10,7 @@ fun main() {
     }
 }
 
-private fun findWords(words: Array<String>): Array<String> {
+private fun  findWords(words: Array<String>): Array<String> {
     val charToRow = IntArray(26) // 'a' to 'z'
 
     // Fill row mapping
