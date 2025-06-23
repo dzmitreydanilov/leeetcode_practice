@@ -1,7 +1,5 @@
 package com.ddanilov.newchallange
 
-import kotlinx.coroutines.flow.merge
-
 fun main() {
     val nums = intArrayOf(5, 2, 3, 1)
     val result = sortArray(nums)
