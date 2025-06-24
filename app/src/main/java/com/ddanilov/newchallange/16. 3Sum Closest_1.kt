@@ -5,7 +5,7 @@ import kotlin.math.abs
 
 fun main() {
     val nums = intArrayOf(1, 1, 1, 0)
-    val target = -100
+    val target = 100
 
     val result = threeSumClosest(nums, target)
 
@@ -13,44 +13,32 @@ fun main() {
 }
 
 /**
- * 0
- * 1
- * 1 1
- * l
- * r
- * curr = 2
- *
- * r = 2
- * target = -100
- *
- *
- * -1,2,1,-4
- * target = 1
+ * -1, 2, 1, -4
  *
  * -4,-1, 1, 2
  *  i
  *     l
  *           r
  *
- * result = -4
+ *
  */
 private fun threeSumClosest(nums: IntArray, target: Int): Int {
     Arrays.sort(nums)
     var result = nums[0] + nums[1] + nums[2]
 
-    for (i in 0 until nums.size ) {
+    for (i in nums.indices) {
         var l = i + 1
         var r = nums.lastIndex
 
         while (l < r) {
-            val currentSum = nums[i] + nums[l] + nums[r]
-            if (currentSum > target) {
+            val currSum = nums[i] + nums[l] + nums[r]
+            if (currSum > target) {
                 r--
             } else {
                 l++
             }
-            if (abs(currentSum - target) < abs(result - target)) {
-                result = currentSum
+            if (abs(currSum - target) < abs(result - target)) {
+                result = currSum
             }
         }
     }
