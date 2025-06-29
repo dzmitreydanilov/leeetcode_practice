@@ -3,7 +3,7 @@ package com.ddanilov.newchallange
 import java.util.Arrays
 
 fun main() {
-    val nums = intArrayOf(-1, 0, 1, 2, -1, -4)
+    val nums = intArrayOf(-1, 0, 1, -1, 0, 1)
 
     val result = threeSum(nums)
 
@@ -13,27 +13,19 @@ fun main() {
 }
 
 /**
- * -1,
- * -1,
- * -1,
+ * -1,-1, 0, 0, 1
+ *           i
+ *           l
+ *            r
  *
- *  0,
  *
- *  1,
- *  2
- *  l
- *  r
+ * [
  *
- *  i = 4
- *  l = 4
- *  r = 5
- *
- * result = [
- * [-1,-1,2]
  * [-1,0,1]
+ *
  * ]
  *
-
+ *
  */
 private fun threeSum(nums: IntArray): List<List<Int>> {
     Arrays.sort(nums)
