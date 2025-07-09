@@ -15,7 +15,7 @@ private fun addBinary(a: String, b: String): String {
     var carry = 0
     var result = ""
 
-    for (i in 0..maxOf(a.length, b.length)) {
+    for (i in 0 until maxOf(a.length, b.length)) {
         val digitA = if (i < a.length) reversedA[i].code - '0'.code else 0
         val digitB = if (i < b.length) reversedB[i].code - '0'.code else 0
 
