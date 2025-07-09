@@ -1,7 +1,5 @@
 package com.ddanilov.newchallange
 
-import kotlin.io.path.Path
-
 fun main() {
     val a = "110100"
     val b = "1"
@@ -28,7 +26,7 @@ private fun addBinary(a: String, b: String): String {
         val digitA = if (i < a.length) reverseddA[i].code - '0'.code else 0
         val digitB = if (i < b.length) reversedB[i].code - '0'.code else 0
 
-        //              0        0   =  0
+        //              0        0   +  0
         val newSum = digitA + digitB + carry
         val newChar = newSum % 2
         result = newChar.toString() + result
