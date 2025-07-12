@@ -1,4 +1,4 @@
-package com.ddanilov.cadence2
+package com.ddanilov.cadence2.arrays
 
 fun main() {
     val nums = intArrayOf(2, 7, 11, 15)
