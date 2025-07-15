@@ -75,5 +75,4 @@ fun main() {
    val result = tree.lookUp(18)
 
     println("XXX ${result?.value}")
-
 }

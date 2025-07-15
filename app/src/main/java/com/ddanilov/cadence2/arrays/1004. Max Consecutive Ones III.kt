@@ -1,5 +1,7 @@
 package com.ddanilov.cadence2.arrays
 
+import kotlin.properties.Delegates.vetoable
+
 fun main() {
     val nums = arrayOf(
         'H',
